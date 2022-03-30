@@ -16,5 +16,5 @@ def updateMsgs(client, message,redis):
   rank = isrank(redis,userID,chatID)
   text = message.text
   if text and text == "غنيلي" :
-      client.copy_message(chatID,"VeerSongs",random.randint(2, 265),reply_to_message_id=message.message_id)
+      client.copy_message(chatID,"SingVeer",random.randint(2, 265),reply_to_message_id=message.message_id)
 
