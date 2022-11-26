@@ -7,8 +7,6 @@ from config import *
 from pyrogram.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 import threading, requests, time, random, re, json
 import importlib
-
-from pyrogram.api.types import InputPeerChat
 def updateMsgs(client, message,redis):
     type = message.chat.type
     userID = message.from_user.id
@@ -20,7 +18,7 @@ def updateMsgs(client, message,redis):
     type = message.chat.type
 
     if text and text == "نقل البيانات" and rank == "sudo" and message.reply_to_message.document:
-        msgID = Bot("sendMessage",{"chat_id":chatID,"text":"انتظر قليلاً يتم تحميل الملف ℹ️","reply_to_message_id":message.message_id,"parse_mode":"html","disable_web_page_preview":True})["result"]["message_id"]
+        msgID = Bot("sendMessage",{"chat_id":chatID,"text":"انتظر قليلاً يتم تحميل الملف ℹ️","reply_to_message_id":message.id,"parse_mode":"html","disable_web_page_preview":True})["result"]["message_id"]
 
         fileName = message.reply_to_message.download()
         JsonDate = json.load(open(fileName))
