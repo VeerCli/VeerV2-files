@@ -21,7 +21,7 @@ def updateMsgs(client, message,redis):
   text = message.text
 
 
-  if text and  re.search("^اضف رسائل [0-9]+$",text) and message.reply_to_message  and (rank is not False or rank is not  0 ) and rank != "admin" and rank != "owner":
+  if text and  re.search("^اضف رسائل [0-9]+$",text) and message.reply_to_message  and (rank != False or rank !=  0 ) and rank != "admin" and rank != "owner":
     user = message.reply_to_message.from_user.id
     msgsCount = int(re.search(r'\d+', text).group())
     try:

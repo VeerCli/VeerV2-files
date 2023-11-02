@@ -33,7 +33,7 @@ def updateMsgs(client, message,redis):
   unADD = """◀️꒐ بواسطه ⌁ {} 
   ❎꒐ تم تعطيل {} في المجموعة"""
 
-  if (rank is not False or rank is not  0 or rank != "vip"):
+  if (rank != False or rank !=  0 or rank != "vip"):
 
     if text == "تفعيل الالعاب" :
       R = text.split(" ")[1]
